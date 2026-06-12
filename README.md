@@ -2,14 +2,14 @@
 
 Proyecto modularizado
 
-# EJECUCIÓN DEL PROYECTO
+## EJECUCIÓN DEL PROYECTO
 
 Sigue los siguientes pasos: 
 ## 1: Clonar el repositorio
 Abre tu terminal y clona el repositorio:
 
-# Si no sabes abrir la terminal prueba con la combinación de teclas:
-control + ñ 
+## Si no sabes abrir la terminal prueba con la combinación de teclas:
+control + shift + ñ 
 
 git clone https://github.com/lenis2807/ComplejidadAlgoritmica
 
@@ -21,7 +21,7 @@ python main.py
 
 -----------------------------------------------------------
 ## Integrantes: 
-# Adriana Nicole Ramos Fuentes Rivera
-# Joseph Calderóno Mendoza
-# Addy Pineda Saldaña
-# Lenis Jauregui
+## Adriana Nicole Ramos Fuentes Rivera
+## Joseph Calderón Mendoza
+## Addy Pineda Saldaña
+## Lenis Jauregui
