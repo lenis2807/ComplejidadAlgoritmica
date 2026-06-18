@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlyWise · Optimización de Rutas Aéreas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"><body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">Fly<b>Wise</b></span>
+      <span class="sub">Optimización de Rutas Aéreas</span>
+    </div>
+    <div class="topstats">
+      <div class="stat"><span class="num" id="stAirports">—</span><span class="lbl">Aeropuertos</span></div>
+      <div class="stat"><span class="num" id="stEdges">—</span><span class="lbl">Rutas</span></div>
+      <div class="stat"><span class="num" id="stComp">—</span><span class="lbl">Redes</span></div>
+    </div>
+  </header>
+
+  <main>
+    <aside>
+      <div class="pad">
+        <div class="eyebrow">Trayecto</div>
+
+        <div class="field">
+          <label>Origen</label>
+          <div class="endpoint-row">
+            <span class="dot-marker orig"></span>
+            <input type="text" id="origin" list="aplist" placeholder="Código o ciudad…" autocomplete="off">
+          </div>
+        </div>
+
+        <button class="swap-btn" id="swap">↑↓  Intercambiar origen / destino</button>
+
+        <div class="field">
+          <label>Destino</label>
+          <div class="endpoint-row">
+            <span class="dot-marker dest"></span>
+            <input type="text" id="dest" list="aplist" placeholder="Código o ciudad…" autocomplete="off">
+          </div>
+        </div>
+        <datalist id="aplist"></datalist>
+
+        <div class="eyebrow" style="margin-top:24px">Algoritmo</div>
+        <div class="seg">
+          <button data-algo="dijkstra" class="active">
+            <span class="t">Dijkstra</span>
+            <span class="d">Menor distancia (km)</span>
+          </button>
+          <button data-algo="iddfs">
+            <span class="t">IDDFS</span>
+            <span class="d">Menos escalas</span>
+          </button>
+        </div>
+        <div class="iddfs-extra" id="iddfsExtra">
+          <div class="field">
+            <label>Límite de escalas</label>
+            <input type="number" id="limit" min="1" max="20" value="6">
+          </div>
+        </div>
+
+        <button class="run" id="run">Calcular ruta</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="board" id="board">
+        <p class="empty">Elige un origen y un destino —o haz clic en dos aeropuertos del mapa— y calcula la ruta óptima.</p>
+      </div>
+
+      <div class="legend">
+        <div class="row"><span class="chip" style="background:var(--amber)"></span> Ruta Dijkstra · óptima en distancia</div>
+        <div class="row"><span class="chip" style="background:var(--cyan)"></span> Ruta IDDFS · óptima en nº de escalas</div>
+        <div class="row"><span class="chip" style="background:var(--route-base)"></span> Red completa de rutas (4 994)</div>
+      </div>
+    </aside>
+
+    <div class="mapwrap">
+      <canvas id="map"></canvas>
+      <button class="recenter" id="recenter">⊕ CENTRAR</button>
+      <div class="tooltip" id="tip"><div class="tc" id="tipCode"></div><div class="tp" id="tipPlace"></div></div>
+      <div class="maphint">
+        Arrastra para mover · <kbd>scroll</kbd> para zoom · clic en un aeropuerto para fijarlo como origen/destino
+      </div>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

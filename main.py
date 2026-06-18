@@ -5,6 +5,8 @@ from gui import graficarDijkstra, graficarIDDFS
 #IMPORTAMOS LAS FUNCIONES A USAR DEL ARCHIVO COD
 from cod import G, imprimirGrafoNormal, algoritmoDijkstra, IDDFS
 
+
+#funcion del main
 def main():
     '''
     ***************************************************************************************************

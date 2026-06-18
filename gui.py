@@ -36,7 +36,7 @@ def graficarDijkstra(grafo, camino): #creamos una funcion para graficar el algor
     plt.axis("off") #dejamos unicamente los datos visibles
     plt.tight_layout() #para los margenes
     plt.show() #mostramos el grafo
- 
+    
  
 def graficarIDDFS(camino):
     G_camino = nx.DiGraph()
@@ -53,4 +53,3 @@ def graficarIDDFS(camino):
     plt.title("Ruta Óptima Encontrada por IDDFS", fontsize=14, fontweight='bold')
     plt.axis('off')
     plt.show()
-
