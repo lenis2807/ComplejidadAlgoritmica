@@ -17,7 +17,12 @@ git clone https://github.com/lenis2807/ComplejidadAlgoritmica
 pip install -r requirements.txt
 
 ## 3: Ejecuta el programa
+-En consola:
 python main.py
+
+-Interfaz gráfica:
+python app.py
+control + click (en el http)
 
 -----------------------------------------------------------
 ## Integrantes: 
